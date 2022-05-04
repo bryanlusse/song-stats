@@ -63,7 +63,6 @@ const Header = () => {
             Authorization: `Bearer ${token}`
         },
     });
-    console.log(data)
     setStats({0: {
       labels: songLabelsCap,
       datasets: [
@@ -80,7 +79,6 @@ const Header = () => {
       x.style.display = "inline-block";
     }
   }
-  console.log(stats)
   
   useEffect(() => {
     if (window.innerWidth > 769) {
