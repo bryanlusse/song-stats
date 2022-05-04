@@ -1,4 +1,4 @@
-import {Chart as ChartJS} from 'chart.js/auto'
+import {Chart as ChartJS} from "chart.js/auto"
 import { Radar } from "react-chartjs-2";
 
 export const RadarChart = ({ chartData }) => {
