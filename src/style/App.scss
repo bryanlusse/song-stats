@@ -158,12 +158,33 @@ ORDER: Base + Typography > Generar Layout + Grid > Page Layout > Components
  }
 
   .stats-container {
-    display: flex;
+    display: none;
     justify-content: center;
     flex-wrap: wrap;
     // margin: 10px auto;
     position: relative;
     text-align:center;
+    height: 600px; 
+    width: 600px;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+      height: 600px; 
+      width: 600px;
+    }
+    @include respond(tab-port) {
+      height: 90vw; 
+      width: 90vw;
+    }
+    @include respond(phone) {
+      height: 90vw; 
+      width: 90vw;
+    }
+    @include respond(phone-xs) {
+      height: 90vw; 
+      width: 90vw;
+    }
+
   }
   
   .stats-title {
@@ -180,11 +201,11 @@ ORDER: Base + Typography > Generar Layout + Grid > Page Layout > Components
       text-align: center;
     }
     @include respond(phone) {
-      font-size: 3.5rem;
+      font-size: 2.3rem;
       line-height: 1.5;
     }
     @include respond(phone-xs) {
-      font-size: 2.8rem;
+      font-size: 1.9rem;
     }
   }
 
@@ -297,19 +318,26 @@ a:hover {
   font-size: 3.8rem;
   height: 60px;
   cursor: pointer;
+  @include respond(tab-land) {
+    font-size: 4rem;
+  }
+  @include respond(tab-port) {
+    font-size: 3.6rem;
+    text-align: center;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+    height: 45px;
+  }
+  @include respond(phone-xs) {
+    font-size: 2rem;
+    height: 40px;
+  }
   // Responsive Button hero style
   @include respond(phone) {
     background-image: none;
     border: 2px solid $secondary-color;
     -webkit-text-fill-color: $secondary-color;
-  }
-
-  &::before {
-    font-family: FontAwesome;
-    content: "\f002";
-    color: white;
-    font-weight: lighter;
-    padding-right: 0.3em;
   }
 
   &::after {
@@ -364,6 +392,24 @@ input[type="text"]
     font-size: 4rem;
     background-color: var(--textbg-color);
     color: var(--text-color);
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 2.5rem;
+      height: 40px;
+      width: 50vw;
+    }
+    @include respond(phone-xs) {
+      font-size: 2rem;
+      height: 34px;
+      width: 50vw;
+    }
 }
 
 .footer {
@@ -626,10 +672,50 @@ input:checked + .slider:before {
   left: 0;
   width: 100%; /* Full width */
   z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar nav-child{
+  position: relative; 
+  float: left;
 }
 
 .logo {
   margin-right: 40%;
   height: 50px;
   width: 187px;
+}
+
+#search-button {
+
+  &::before {
+    font-family: FontAwesome;
+    content: "\f002";
+    color: white;
+    font-weight: lighter;
+    padding-right: 0.3em;
+  }
+
+}
+
+#compare {
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  @include respond(tab-land) {
+    font-size: 4rem;
+  }
+  @include respond(tab-port) {
+    font-size: 3.6rem;
+    text-align: center;
+  }
+  @include respond(phone) {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+  @include respond(phone-xs) {
+    font-size: 2rem;
+  }
 }

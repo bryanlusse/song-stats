@@ -55,17 +55,20 @@ const Header = () => {
     }
   }
 
-  const doSomething = async (e) => {
+  const getStats = async (e) => {
     e.preventDefault()
     var loader = document.getElementById("loader-bubbles");
     var chart = document.getElementById("chart-container");
+    var button = document.getElementById("compare");
 
     if (chart.style.display === "inline-block") {
       chart.style.display = "none";
     }
-    if (loader.style.display === "inline-block") {
-      loader.style.display = "none";
+
+    if (button.style.display === "inline-block") {
+      button.style.display = "none";
     }
+
     loader.style.display = "inline-block";
 
     const auth = await axios.get("https://react-spotify--app.herokuapp.com/token", {
@@ -156,6 +159,7 @@ const Header = () => {
       }
     )
     chart.style.display = "inline-block";
+    button.style.display = "inline-block";
     loader.style.display = "none";
   }
 
@@ -236,6 +240,10 @@ const Header = () => {
     )
   }, [themecolors]);
 
+  const doSomething = async (e) => {
+    
+  }
+
   useEffect(() => {
     keepTheme();
   })
@@ -254,19 +262,19 @@ const Header = () => {
     <section id="stats" style={{width: "100%", padding: 0, height: "200%"}}>
       <Container style={{width: "100%", justifyContent: "center", paddingTop: "-10 em"}}>
         <div className="navbar">
-          <div style={{position: "relative", float: "left", width: "80%"}}>
+          <div className="nav-child" style={{width: "80%"}}>
             <a href="./">
               <img className="logo" src={Image} alt="Song Stats"/>
             </a>
           </div>
-          <div style={{position: "relative", float: "left", width: "20%"}}>
+          <div className="nav-child" style={{width: "20%", height: "100%"}}>
             <label className="switch" >
               <input id="switch" type="checkbox" onClick={darkMode}/>
               <span className="slider round"></span>
             </label>
           </div>
         </div>
-        <div id='text-container' style={{textAlign: "center", display: "block"}}>
+        <div id='text-container' style={{textAlign: "center", display: "block", marginTop: "40px", marginBottom: "40px"}}>
           <div style={{display: "inline-block", margin: "0 auto"}}>
             <h1 className="stats-title">
               {"Hi, search for a "}
@@ -279,7 +287,7 @@ const Header = () => {
             <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
               <h2 className="stats-title">
                 <input type="text" onChange={e => setSearchKey(e.target.value)}/>
-                <button className="cta-btn cta-btn--stats" onClick={doSomething}>
+                <button id="search-button" className="cta-btn cta-btn--stats" onClick={getStats}>
                   Search
                 </button>
               </h2>
@@ -292,9 +300,14 @@ const Header = () => {
             <div></div>
           </div>
         </div>
-        <div id="chart-container" className="stats-container" style={{height: "600px", width: "600px", display: "none", margin: "0 auto"}}>
+        <div id="chart-container" className="stats-container">
           <RadarChart chartData={stats[0]} chartOptions={options}/>
           <div id="chartjs-tooltip" className="tooltiptext"></div>
+        </div>
+        <div>
+          <button id="compare" className="cta-btn cta-btn--stats" style={{display: "none"}} onClick={doSomething}>
+            Compare with other songs
+          </button>
         </div>
       </Container>
     </section>
