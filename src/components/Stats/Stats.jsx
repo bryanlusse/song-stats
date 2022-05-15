@@ -48,7 +48,10 @@ const Header = () => {
 
   window.onload = function() {
     const checkbox = document.getElementById("switch");
-    checkbox.checked = localStorage.getItem('theme') === 'theme-light' ? "false" : "true"
+    const check = localStorage.getItem('theme') === 'theme-light' ? "false" : "true";
+    if (check == "true") {
+      checkbox.checked = 'true'
+    }
   }
 
   const doSomething = async (e) => {

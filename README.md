@@ -29,8 +29,7 @@
 
 ## :scroll: Overview
 
-This web app serves as an interface to chat with a chatbot. It is possible to have a conversation with the chatbot about almost any topic imagineable. Just type in your question or topic, hit enter, and see what the chatbot has to say about it. The conversation can be reset with the button on the bottom of the screen. For more information, see the accompanying blogpost on [Medium](https://medium.com/@blusse7/deploying-a-chatbot-on-heroku-using-flask-and-huggingface-7dadb77d8f48).
-Enjoy!
+This web app serves as an interface to find musical statistics of songs. The web app uses the Spotify API to fetch songs and their statistics and serves this through a radar chart. Hovering over the different statistics gives more information about their meaning. 
 
 ## :rice_scene: Screenshot
 
