@@ -73,4 +73,4 @@ const dataexpl = {
 }
 
 
-exports.customHover = customHover
+export {customHover};
