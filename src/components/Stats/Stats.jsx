@@ -1,8 +1,9 @@
-import React, {useState, useContext, useEffect, createRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import {keepTheme, setTheme} from '../../utils/themes';
 import {RadarChart} from "./Chart";
 import {Container} from 'react-bootstrap';
 import axios from 'axios';
+import Image from "./SONGSTATS-logos_transparent.png"
 
 const songLabels = [
   "acousticness",
@@ -49,7 +50,7 @@ const Header = () => {
   window.onload = function() {
     const checkbox = document.getElementById("switch");
     const check = localStorage.getItem('theme') === 'theme-light' ? "false" : "true";
-    if (check == "true") {
+    if (check === "true") {
       checkbox.checked = 'true'
     }
   }
@@ -155,7 +156,6 @@ const Header = () => {
       }
     )
     chart.style.display = "inline-block";
-    document.getElementById("stats").style.minHeight = "62.5 em";
     loader.style.display = "none";
   }
 
@@ -251,12 +251,21 @@ const Header = () => {
   }, []);
 
   return (
-    <section id="stats" className="jumbotron jumbotron-fluid" style={{width: "100%", padding: 0, minHeight: "1000px"}}>
-      <Container style={{width: "100%", justifyContent: "center"}}>
-        <label className="switch" >
-          <input id="switch" type="checkbox" onClick={darkMode}/>
-          <span className="slider round"></span>
-        </label>
+    <section id="stats" style={{width: "100%", padding: 0, height: "200%"}}>
+      <Container style={{width: "100%", justifyContent: "center", paddingTop: "-10 em"}}>
+        <div className="navbar">
+          <div style={{position: "relative", float: "left", width: "80%"}}>
+            <a href="./">
+              <img className="logo" src={Image} alt="Song Stats"/>
+            </a>
+          </div>
+          <div style={{position: "relative", float: "left", width: "20%"}}>
+            <label className="switch" >
+              <input id="switch" type="checkbox" onClick={darkMode}/>
+              <span className="slider round"></span>
+            </label>
+          </div>
+        </div>
         <div id='text-container' style={{textAlign: "center", display: "block"}}>
           <div style={{display: "inline-block", margin: "0 auto"}}>
             <h1 className="stats-title">

@@ -35,7 +35,8 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  background-color: var(--background-color)
+  background-color: var(--background-color);
+  padding-top: 30px;
 }
 
 // MEDIA QUERY MANAGER
@@ -160,7 +161,7 @@ ORDER: Base + Typography > Generar Layout + Grid > Page Layout > Components
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 10px auto;
+    // margin: 10px auto;
     position: relative;
     text-align:center;
   }
@@ -494,9 +495,9 @@ input[type="text"]
 
 /* The switch - the box around the slider */
 .switch {
-  position: absolute; 
-  top: 1%; 
-  right: 3%;
+  position: relative; 
+  margin-top: 3.5%; 
+  margin-left: 10%;
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -615,5 +616,20 @@ input:checked + .slider:before {
    line-height: 0px;
    padding: 0;
    color: white;
+}
 
+.navbar {
+  overflow: hidden;
+  background-color: $secondary-color;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 99;
+}
+
+.logo {
+  margin-right: 40%;
+  height: 50px;
+  width: 187px;
 }
