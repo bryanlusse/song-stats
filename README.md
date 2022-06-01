@@ -11,7 +11,7 @@
 
 [Overview](#scroll-overview)
 •
-[Screenshot](#rice_scene-screenshot)
+[Screenshots](#rice_scene-screenshots)
 •
 [URL](#computer-url)
 •
@@ -21,7 +21,7 @@
 ## :bookmark_tabs: Menu
 
 - [Overview](#scroll-overview)
-- [Screenshot](#rice_scene-screenshot)
+- [Screenshots](#rice_scene-screenshots)
 - [URL](#computer-url)
 - [Requirements](#exclamation-requirements)
 - [Folder Structure](#open_file_folder-folder-structure)
@@ -31,9 +31,12 @@
 
 This web app serves as an interface to find musical statistics of songs. The web app uses the Spotify API to fetch songs and their statistics and serves this through a radar chart. Hovering over the different statistics gives more information about their meaning. 
 
-## :rice_scene: Screenshot
+## :rice_scene: Screenshots
 
 ![Logo](assets/screenshot.png)
+
+App is fully responsive:
+![Logo](assets/Songstats_Devices_Mockup.jpg)
 
 ## :computer: URL
 
